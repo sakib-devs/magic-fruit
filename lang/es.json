@@ -1,5 +1,6 @@
 {
   "fruit.pick-fruit": "Elige una fruta de la lista",
+  "fruit.confirmation": "Ist die Frucht, die Sie zuvor ausgewählt haben, in dieser Liste verfügbar?",
   "fruit.mango": "Mango",
   "fruit.berry": "Baya",
   "fruit.jackfruit": "Yaca",
@@ -22,5 +23,11 @@
   "general.play": "Reproducir",
   "general.previous": "Anterior",
   "general.next": "Siguiente",
+  "general.yes": "Sí",
+  "general.no": "No",
+  "general.your-answer": "La fruta que seleccionaste es:",
+  "general.wrong-answer": "¡Estás haciendo trampa ! 😛",
+  "general.play-again": "¡Jugar de nuevo !",
+  "general.or": "O",
   "project.title": "Fruta Magica"
 }

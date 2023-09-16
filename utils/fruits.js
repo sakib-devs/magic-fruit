@@ -120,3 +120,23 @@ export const fruitsMap = new Map([
   [6, sixthPageFruits],
   [7, seventhPageFruits],
 ])
+
+export const answer = new Map([
+  [4, coconut],
+  [5, woodApple],
+  [6, sapodilla],
+  [7, velvetApple],
+  [8, carambola],
+  [9, papaya],
+  [10, amalaki],
+  [11, banana],
+  [12, currant],
+  [13, jackfruit],
+  [14, mango],
+  [15, palm],
+  [16, pomegranate],
+  [17, jujube],
+  [18, berry],
+  [19, grapefruit],
+  [20, custardApple],
+])

@@ -1,5 +1,6 @@
 {
   "fruit.pick-fruit": "Choisir un fruit dans la liste",
+  "fruit.confirmation": "Le fruit que vous avez choisi précédemment est-il disponible dans cette liste ?",
   "fruit.mango": "Mangue",
   "fruit.berry": "Baie",
   "fruit.jackfruit": "Jacquier",
@@ -22,5 +23,11 @@
   "general.play": "Jouer",
   "general.previous": "Précédent",
   "general.next": "Suivant",
+  "general.yes": "Oui",
+  "general.no": "Non",
+  "general.your-answer": "Le fruit que vous avez choisi est :",
+  "general.wrong-answer": "Vous trichez ! 😛",
+  "general.play-again": "Jouez à nouveau !",
+  "general.or": "ou",
   "project.title": "Fruit magique"
 }
