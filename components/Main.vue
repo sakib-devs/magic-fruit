@@ -56,6 +56,7 @@ import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { fruitsMap, answer } from '@/utils/fruits'
 import { sliceIntoChunks } from '@/helpers/chunks'
+import { shuffle } from '@/helpers/shuffle'
 
 const i18n = useI18n()
 const textGreetings = computed(() => {
@@ -102,13 +103,15 @@ const isGameFinished = computed(() => {
 })
 
 const listedFruits = computed(() => {
-  if (isBeforeGameStarted.value || isGameFinished.value) {
+  if (!fruitsMap.has(currentRound.value)) {
     return []
   }
 
-  return fruitsMap
+  const mappedFruits = fruitsMap
     .get(currentRound.value)
     .map(fruit => ({ ...fruit, name: i18n.t(fruit.name) }))
+
+  return shuffle(mappedFruits)
 })
 const chunkedFruits = computed(() => {
   if (listedFruits.value.length === 0) {
