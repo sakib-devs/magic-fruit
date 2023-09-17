@@ -56,7 +56,6 @@ import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { fruitsMap, answer } from '@/utils/fruits'
 import { sliceIntoChunks } from '@/helpers/chunks'
-import { shuffle } from '@/helpers/shuffle'
 
 const i18n = useI18n()
 const textGreetings = computed(() => {
@@ -64,28 +63,7 @@ const textGreetings = computed(() => {
     title: i18n.t('project.title'),
   })
 })
-
-const startGame = () => {
-  currentRound.value = 0
-  points.value = 0
-}
-
 const currentRound = ref(-1)
-
-const isRound = round => {
-  return currentRound.value === round
-}
-const increaseRound = () => {
-  currentRound.value++
-}
-const increaseRoundWithYes = () => {
-  points.value += currentRound.value
-  increaseRound()
-}
-const decreaseRound = () => {
-  currentRound.value--
-}
-
 const isBeforeGameStarted = computed(() => {
   return isRound(-1)
 })
@@ -101,17 +79,14 @@ const isGameStarted = computed(() => {
 const isGameFinished = computed(() => {
   return isRound(fruitsMap.size)
 })
-
 const listedFruits = computed(() => {
   if (!fruitsMap.has(currentRound.value)) {
     return []
   }
 
-  const mappedFruits = fruitsMap
+  return fruitsMap
     .get(currentRound.value)
     .map(fruit => ({ ...fruit, name: i18n.t(fruit.name) }))
-
-  return shuffle(mappedFruits)
 })
 const chunkedFruits = computed(() => {
   if (listedFruits.value.length === 0) {
@@ -135,4 +110,22 @@ const pickedFruit = computed(() => {
 const wrongAnswer = computed(() => {
   return `(${i18n.t('general.or')} ${i18n.t('general.wrong-answer')})`
 })
+
+function startGame() {
+  currentRound.value = 0
+  points.value = 0
+}
+function isRound(round) {
+  return currentRound.value === round
+}
+function increaseRound() {
+  currentRound.value++
+}
+function increaseRoundWithYes() {
+  points.value += currentRound.value
+  increaseRound()
+}
+function decreaseRound() {
+  currentRound.value--
+}
 </script>
