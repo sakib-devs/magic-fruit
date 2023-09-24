@@ -1,7 +1,9 @@
 <template>
   <header class="header">
-    <div class="header__left flex w-full md:flex-none md:w-fit">
-      <select @change="setLocale" class="text-center w-full">
+    <div class="header__left flex w-full">
+      <select
+        @change="setLocale"
+        class="p-1.5 rounded-sm outline-none outline-teal-500 hover:outline-teal-600 text-center w-full sm:text-left sm:w-fit">
         <option value="" v-text="$t('general.select-language')" />
         <option
           v-for="{ code, name } in locales"
