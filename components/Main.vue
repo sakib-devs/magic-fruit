@@ -21,9 +21,15 @@
         v-if="isStarterRound"
         class="flex flex-col justify-center items-center">
         <div v-text="$t('fruit.pick-fruit')" />
-        <div class="flex gap-2">
-          <button @click="decreaseRound" v-text="$t('general.previous')" />
-          <button @click="increaseRound" v-text="$t('general.next')" />
+        <div class="my-2 flex gap-2">
+          <button
+            class="w-28 py-1 bg-pink-700 hover:bg-pink-800 text-white rounded hover:font-semibold duration-300"
+            @click="decreaseRound"
+            v-text="$t('general.previous')" />
+          <button
+            class="w-28 py-1 bg-cyan-700 hover:bg-cyan-800 text-white rounded hover:font-semibold duration-300"
+            @click="increaseRound"
+            v-text="$t('general.next')" />
         </div>
       </div>
 
@@ -31,9 +37,15 @@
         v-if="isPlayingRound"
         class="flex flex-col justify-center items-center">
         <div v-text="$t('fruit.confirmation')" />
-        <div class="flex gap-2">
-          <button @click="increaseRound" v-text="$t('general.no')" />
-          <button @click="increaseRoundWithYes" v-text="$t('general.yes')" />
+        <div class="my-2 flex gap-2">
+          <button
+            class="w-28 py-1 bg-rose-700 text-white rounded hover:bg-rose-800 hover:font-semibold duration-300"
+            @click="increaseRound"
+            v-text="$t('general.no')" />
+          <button
+            class="w-28 py-1 bg-emerald-700 text-white rounded hover:bg-emerald-800 hover:font-semibold duration-300"
+            @click="increaseRoundWithYes"
+            v-text="$t('general.yes')" />
         </div>
       </div>
     </div>
