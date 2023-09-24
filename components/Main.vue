@@ -42,7 +42,10 @@
       v-if="isGameFinished"
       class="flex flex-col justify-center items-center">
       <div class="flex flex-col justify-center items-center">
-        <span class="text-3xl font-bold" v-text="$t('general.your-answer')" />
+        <span
+          v-if="hasAnswer"
+          class="text-3xl font-bold"
+          v-text="$t('general.your-answer')" />
         <span class="text-3xl font-bold" v-text="pickedFruit" />
         <span v-if="hasAnswer" v-text="wrongAnswer" />
       </div>
