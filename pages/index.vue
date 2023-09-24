@@ -1,5 +1,6 @@
 <template>
-  <div class="pt-2 px-4">
+  <div
+    class="h-screen pt-2 px-4 bg-gradient-to-bl from-emerald-50 via-gray-300 to-cyan-300 select-none">
     <Header />
     <Main />
   </div>
