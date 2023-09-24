@@ -2,9 +2,14 @@
   <div>
     <div
       v-if="isBeforeGameStarted"
-      class="flex flex-col justify-center items-center">
-      <span class="text-3xl font-bold" v-text="textGreetings" />
-      <button v-text="$t('general.play')" @click="startGame" />
+      class="h-96 flex flex-col justify-center items-center">
+      <span
+        class="text-3xl font-bold hover:scale-125 duration-500 hover:text-emerald-500"
+        v-text="textGreetings" />
+      <PlayIcon
+        class="play-icon hover:scale-125 duration-500 text-cyan-500 px-2 rounded-full cursor-pointer"
+        :title="$t('general.play')"
+        @click="startGame" />
     </div>
 
     <div v-if="isGameStarted" class="flex flex-col justify-center items-center">
@@ -71,6 +76,7 @@ import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { fruitsMap, answer } from '@/utils/fruits'
 import { sliceIntoChunks } from '@/helpers/chunks'
+import PlayIcon from '@/assets/icons/play.svg'
 
 const i18n = useI18n()
 const textGreetings = computed(() => {
@@ -144,3 +150,10 @@ function decreaseRound() {
   currentRound.value--
 }
 </script>
+
+<style scoped>
+.play-icon {
+  height: 4rem;
+  width: 4rem;
+}
+</style>

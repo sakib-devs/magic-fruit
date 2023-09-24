@@ -947,7 +947,7 @@
     which "^3.0.1"
     ws "^8.13.0"
 
-"@nuxt/kit@3.7.3", "@nuxt/kit@^3.5.0", "@nuxt/kit@^3.6.5", "@nuxt/kit@^3.7.0", "@nuxt/kit@^3.7.1":
+"@nuxt/kit@3.7.3", "@nuxt/kit@^3.4.0", "@nuxt/kit@^3.5.0", "@nuxt/kit@^3.6.5", "@nuxt/kit@^3.7.0", "@nuxt/kit@^3.7.1":
   version "3.7.3"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.7.3.tgz#24a32bdf2eaa3f8f6c81079fb2a3543980b55d26"
   integrity sha512-bhP02i6CNti15Z4ix3LpR3fd1ANtTcpfS3CDSaCja24hDt3UxIasyp52mqD9LRC+OxrUVHJziB18EwUtS6RLDQ==
@@ -3975,6 +3975,11 @@ mimic-fn@^4.0.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-4.0.0.tgz#60a90550d5cb0b239cca65d893b1a53b29871ecc"
   integrity sha512-vqiC06CuhBTUdZH+RYl8sFrL096vA45Ok5ISO6sE/Mr1jRbGH4Csnhi8f3wKVl7x8mO4Au7Ir9D3Oyv1VYMFJw==
 
+mini-svg-data-uri@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz#8ab0aabcdf8c29ad5693ca595af19dd2ead09939"
+  integrity sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==
+
 minimatch@^3.0.4, minimatch@^3.1.1:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
@@ -4421,6 +4426,16 @@ nuxi@^3.8.3:
   integrity sha512-YQAH2msfL1PeaDuk880jQAJdtF1hpuYaTQ7j8Ombl+SyyamcB9VTx0gbkNyZj7wmJQYxfiV6a42nlGQ7cJDO+g==
   optionalDependencies:
     fsevents "~2.3.3"
+
+nuxt-svgo@^3.5.3:
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/nuxt-svgo/-/nuxt-svgo-3.5.3.tgz#9099fdca3469230404b1f5416b9b1f4c6474ec50"
+  integrity sha512-JQNiy8zlt9P6UkUX2A+b4U3SmDE4pVKx+a6kutwmJFHXCQZR2nwohwhbT2w4Wwu7KqXHYPVGb8nzDiQcoLBl3Q==
+  dependencies:
+    "@nuxt/kit" "^3.4.0"
+    "@vue/compiler-sfc" "^3.2.47"
+    mini-svg-data-uri "^1.4.4"
+    svgo "^3.0.2"
 
 nuxt@^3.7.3:
   version "3.7.3"

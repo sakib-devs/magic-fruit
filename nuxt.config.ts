@@ -2,7 +2,7 @@ import locales from './utils/locale'
 
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ['@nuxtjs/i18n', '@pinia/nuxt'],
+  modules: ['@nuxtjs/i18n', '@pinia/nuxt', 'nuxt-svgo'],
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
