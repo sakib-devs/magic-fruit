@@ -2,9 +2,9 @@
   <div>
     <div
       v-if="isBeforeGameStarted"
-      class="h-96 flex flex-col justify-center items-center">
+      class="h-96 break-words flex flex-col justify-center items-center">
       <span
-        class="text-[3rem] font-bold hover:scale-125 duration-500 hover:text-emerald-500"
+        class="text-[3rem] w-fit font-bold md:hover:scale-125 duration-500 hover:text-emerald-500"
         v-text="textGreetings" />
       <PlayIcon
         class="play-icon hover:scale-125 duration-500 text-cyan-500 px-2 rounded-full cursor-pointer"
@@ -76,7 +76,7 @@
           class="text-3xl font-bold"
           v-text="$t('general.your-answer')" />
         <span
-          class="mt-4 text-emerald-500 text-[4rem] font-bold"
+          class="break-words mt-4 text-emerald-500 text-[4rem] font-bold"
           v-text="pickedFruit" />
         <span class="mt-1" v-if="hasAnswer" v-text="wrongAnswer" />
       </div>
