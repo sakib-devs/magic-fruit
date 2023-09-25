@@ -4,7 +4,7 @@
       v-if="isBeforeGameStarted"
       class="h-96 break-words flex flex-col justify-center items-center">
       <span
-        class="text-[3rem] w-fit font-bold md:hover:scale-125 duration-500 hover:text-emerald-500"
+        class="text-center text-[3rem] w-fit font-bold md:hover:scale-125 duration-500 hover:text-emerald-500"
         v-text="textGreetings" />
       <PlayIcon
         class="play-icon hover:scale-125 duration-500 text-cyan-500 px-2 rounded-full cursor-pointer"
@@ -38,7 +38,7 @@
         v-if="isStarterRound"
         class="flex flex-col justify-center items-center">
         <div
-          class="mt-6 mb-2 text-lg text-emerald-700 font-bold"
+          class="mt-6 mb-2 text-center text-lg text-emerald-700 font-bold"
           v-text="$t('fruit.pick-fruit')" />
         <div class="my-2 flex gap-3">
           <button
@@ -56,7 +56,7 @@
         v-if="isPlayingRound"
         class="flex flex-col justify-center items-center">
         <div
-          class="mt-6 mb-2 text-lg text-cyan-700 font-bold"
+          class="mt-6 mb-2 text-center text-lg text-cyan-700 font-bold"
           v-text="$t('fruit.confirmation')" />
         <div class="my-2 flex gap-3">
           <button
@@ -77,7 +77,7 @@
       <div class="flex flex-col justify-center items-center">
         <span
           v-if="hasAnswer"
-          class="text-3xl font-bold"
+          class="text-center text-3xl font-bold"
           v-text="$t('general.your-answer')" />
         <img
           v-if="hasAnswer"
