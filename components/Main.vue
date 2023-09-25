@@ -17,16 +17,20 @@
     </div>
 
     <div v-if="isGameStarted" class="flex flex-col justify-center items-center">
-      <div class="my-4 flex justify-center items-start gap-12 h-96">
+      <div class="my-4 flex justify-center items-start gap-16 h-96">
         <ul
-          class="flex flex-col gap-1"
+          class="flex flex-col gap-2"
           v-for="(fruits, index) in chunkedFruits"
           :key="`chuncked-fruit-${index}`">
           <li
-            class="text-lg font-semibold hover:text-cyan-600 duration-500 cursor-pointer"
+            class="flex items-center gap-4"
             v-for="{ id, name } in fruits"
-            :key="id"
-            v-text="name" />
+            :key="id">
+            <img :src="`/images/fruits/${id}.png`" :alt="name" class="w-10" />
+            <span
+              class="text-lg font-semibold hover:text-cyan-600 duration-500 cursor-pointer"
+              v-text="name" />
+          </li>
         </ul>
       </div>
 
@@ -34,7 +38,7 @@
         v-if="isStarterRound"
         class="flex flex-col justify-center items-center">
         <div
-          class="my-2 text-lg text-emerald-700 font-bold"
+          class="mt-6 mb-2 text-lg text-emerald-700 font-bold"
           v-text="$t('fruit.pick-fruit')" />
         <div class="my-2 flex gap-3">
           <button
@@ -52,7 +56,7 @@
         v-if="isPlayingRound"
         class="flex flex-col justify-center items-center">
         <div
-          class="my-2 text-lg text-cyan-700 font-bold"
+          class="mt-6 mb-2 text-lg text-cyan-700 font-bold"
           v-text="$t('fruit.confirmation')" />
         <div class="my-2 flex gap-3">
           <button
@@ -69,25 +73,31 @@
 
     <div
       v-if="isGameFinished"
-      class="h-96 flex flex-col justify-center items-center">
+      class="mt-12 h-96 flex flex-col justify-center items-center">
       <div class="flex flex-col justify-center items-center">
         <span
           v-if="hasAnswer"
           class="text-3xl font-bold"
           v-text="$t('general.your-answer')" />
+        <img
+          v-if="hasAnswer"
+          :src="`/images/fruits/${answer.get(points).id}.png`"
+          :alt="pickedFruit"
+          class="mt-4 w-36 rounded-full" />
         <span
-          class="break-words mt-4 text-emerald-500 text-[4rem] font-bold"
+          class="break-words text-emerald-500 text-[4rem] font-bold"
           v-text="pickedFruit" />
-        <span class="mt-1" v-if="hasAnswer" v-text="wrongAnswer" />
+        <span class="mt-2" v-if="hasAnswer" v-text="wrongAnswer" />
       </div>
-      <PlayIcon
-        class="mt-2 play-icon hover:scale-125 duration-500 text-cyan-500 px-2 rounded-full cursor-pointer"
-        :title="$t('general.play')"
-        @click="startGame" />
-      <button
-        class="font-semibold"
-        v-text="$t('general.play-again')"
-        @click="startGame" />
+      <div class="mt-2 flex flex-col justify-center items-center">
+        <PlayIcon
+          class="play-icon hover:scale-125 duration-500 text-cyan-500 px-2 rounded-full cursor-pointer"
+          @click="startGame" />
+        <button
+          class="font-semibold"
+          v-text="$t('general.play-again')"
+          @click="startGame" />
+      </div>
     </div>
   </div>
 </template>

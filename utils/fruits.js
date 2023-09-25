@@ -1,20 +1,20 @@
-const mango = { id: 1, name: 'fruit.mango', image: '' }
-const berry = { id: 2, name: 'fruit.berry', image: '' }
-const jackfruit = { id: 3, name: 'fruit.jackfruit', image: '' }
-const banana = { id: 4, name: 'fruit.banana', image: '' }
-const grapefruit = { id: 5, name: 'fruit.grapefruit', image: '' }
-const amalaki = { id: 6, name: 'fruit.amalaki', image: '' }
-const palm = { id: 7, name: 'fruit.palm', image: '' }
-const pomegranate = { id: 8, name: 'fruit.pomegranate', image: '' }
-const currant = { id: 9, name: 'fruit.currant', image: '' }
-const carambola = { id: 10, name: 'fruit.carambola', image: '' }
-const woodApple = { id: 11, name: 'fruit.woodApple', image: '' }
-const jujube = { id: 12, name: 'fruit.jujube', image: '' }
-const custardApple = { id: 13, name: 'fruit.custardApple', image: '' }
-const velvetApple = { id: 14, name: 'fruit.velvetApple', image: '' }
-const sapodilla = { id: 15, name: 'fruit.sapodilla', image: '' }
-const papaya = { id: 16, name: 'fruit.papaya', image: '' }
-const coconut = { id: 17, name: 'fruit.coconut', image: '' }
+const mango = { id: 1, name: 'fruit.mango', image: '1.png' }
+const berry = { id: 2, name: 'fruit.berry', image: '2.png' }
+const jackfruit = { id: 3, name: 'fruit.jackfruit', image: '3.png' }
+const banana = { id: 4, name: 'fruit.banana', image: '4.png' }
+const grapefruit = { id: 5, name: 'fruit.grapefruit', image: '5.png' }
+const amalaki = { id: 6, name: 'fruit.amalaki', image: '6.png' }
+const palm = { id: 7, name: 'fruit.palm', image: '7.png' }
+const pomegranate = { id: 8, name: 'fruit.pomegranate', image: '8.png' }
+const lychee = { id: 9, name: 'fruit.lychee', image: '9.png' }
+const carambola = { id: 10, name: 'fruit.carambola', image: '10.png' }
+const woodApple = { id: 11, name: 'fruit.woodApple', image: '11.png' }
+const jujube = { id: 12, name: 'fruit.jujube', image: '12.png' }
+const custardApple = { id: 13, name: 'fruit.custardApple', image: '13.png' }
+const velvetApple = { id: 14, name: 'fruit.velvetApple', image: '14.png' }
+const sapodilla = { id: 15, name: 'fruit.sapodilla', image: '15.png' }
+const papaya = { id: 16, name: 'fruit.papaya', image: '16.png' }
+const coconut = { id: 17, name: 'fruit.coconut', image: '17.png' }
 
 export const firstPageFruits = [
   grapefruit,
@@ -22,7 +22,7 @@ export const firstPageFruits = [
   woodApple,
   papaya,
   coconut,
-  currant,
+  lychee,
   velvetApple,
   jujube,
   banana,
@@ -32,7 +32,7 @@ export const firstPageFruits = [
 export const secondPageFruits = [
   jackfruit,
   palm,
-  currant,
+  lychee,
   custardApple,
   sapodilla,
   papaya,
@@ -44,7 +44,7 @@ export const thirdPageFruits = [
   banana,
   mango,
   pomegranate,
-  currant,
+  lychee,
   carambola,
   jujube,
   coconut,
@@ -73,7 +73,7 @@ export const sixthPageFruits = [
   grapefruit,
   pomegranate,
   jujube,
-  currant,
+  lychee,
   mango,
   custardApple,
   papaya,
@@ -99,7 +99,7 @@ export const fruits = [
   amalaki,
   palm,
   pomegranate,
-  currant,
+  lychee,
   carambola,
   woodApple,
   jujube,
@@ -130,7 +130,7 @@ export const answer = new Map([
   [9, papaya],
   [10, amalaki],
   [11, banana],
-  [12, currant],
+  [12, lychee],
   [13, jackfruit],
   [14, mango],
   [15, palm],
