@@ -1,6 +1,7 @@
 import locales from './utils/locale'
 
 export default defineNuxtConfig({
+  ssr: false,
   devtools: { enabled: false },
   modules: ['@nuxtjs/i18n', '@pinia/nuxt', 'nuxt-svgo'],
   css: ['~/assets/css/main.css'],

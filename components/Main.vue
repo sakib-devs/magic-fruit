@@ -73,7 +73,7 @@
 
     <div
       v-if="isGameFinished"
-      class="mt-12 h-96 flex flex-col justify-center items-center">
+      class="mt-16 h-96 flex flex-col justify-center items-center">
       <div class="flex flex-col justify-center items-center">
         <span
           v-if="hasAnswer"
