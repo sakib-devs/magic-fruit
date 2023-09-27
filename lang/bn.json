@@ -1,6 +1,8 @@
 {
   "fruit.pick-fruit": "উপরের লিস্ট থেকে মনে মনে যে কোন একটি ফল নির্বাচন করুন",
   "fruit.confirmation": "উপরের লিস্টে আপনার মনে মনে ধরা ফলটি আছে?",
+  "fruit.available": "এখানে আছে?",
+  "fruit.here": "এখানে?",
   "fruit.mango": "আম",
   "fruit.berry": "জাম",
   "fruit.jackfruit": "কাঁঠাল",

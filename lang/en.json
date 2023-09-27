@@ -1,6 +1,8 @@
 {
   "fruit.pick-fruit": "Pick a fruit from the list !",
   "fruit.confirmation": "Is the fruit available in this list you picked before ?",
+  "fruit.available": "Is it here?",
+  "fruit.here": "Here?",
   "fruit.mango": "Mango",
   "fruit.berry": "Berry",
   "fruit.jackfruit": "Jackfruit",

@@ -57,7 +57,7 @@
         class="flex flex-col justify-center items-center">
         <div
           class="mt-6 mb-2 text-center text-lg text-cyan-700 font-bold"
-          v-text="$t('fruit.confirmation')" />
+          v-text="confirmationMessage" />
         <div class="my-2 flex gap-3">
           <button
             class="w-28 py-1 bg-rose-700 text-white rounded hover:bg-rose-800 hover:font-semibold hover:scale-110 duration-500"
@@ -114,6 +114,16 @@ const textGreetings = computed(() => {
   return i18n.t('general.greetings', {
     title: i18n.t('project.title'),
   })
+})
+const confirmationMessage = computed(() => {
+  switch (currentRound.value) {
+    case 1:
+      return i18n.t('fruit.confirmation')
+    case 2:
+      return i18n.t('fruit.available')
+    default:
+      return i18n.t('fruit.here')
+  }
 })
 const currentRound = ref(-1)
 const isBeforeGameStarted = computed(() => {
