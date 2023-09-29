@@ -25,6 +25,7 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import XIcon from '@/assets/icons/x.svg'
 import CheckIcon from '@/assets/icons/check.svg'

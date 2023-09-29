@@ -5,6 +5,7 @@ import i18nMock from '@/tests/mocks/i18n.js'
 import AnswerActions from '@/components/AnswerActions.vue'
 
 const i18n = createI18n({
+  legacy: false,
   locale: 'en',
   messages: i18nMock,
 })
