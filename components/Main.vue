@@ -13,8 +13,7 @@
       <AnswerActions
         v-if="isPlayingRound"
         :current-round="currentRound"
-        @increase="increaseRound"
-        @increase-with-yes="increaseRoundWithYes" />
+        @increase="increaseRound" />
     </div>
 
     <LastPage v-if="isGameFinished" :points="points" @start="startGame" />
@@ -63,20 +62,36 @@ const fruits = computed(() => {
 const points = ref(0)
 
 function startGame() {
+  playSound('start')
   currentRound.value = 0
   points.value = 0
 }
 function isRound(round) {
   return currentRound.value === round
 }
-function increaseRound() {
+function increaseRound(action) {
   currentRound.value++
+
+  if (action === 'yes') {
+    points.value += currentRound.value
+  }
+
+  if (isPlayingRound.value) {
+    playSound('start')
+  }
+
+  if (isGameFinished.value) {
+    playSound('success', 'mp3')
+  }
 }
 function increaseRoundWithYes() {
-  points.value += currentRound.value
   increaseRound()
 }
 function decreaseRound() {
   currentRound.value--
+}
+function playSound(sound, extension = 'wav') {
+  const audio = new Audio(`./sounds/${sound}.${extension}`)
+  audio.play()
 }
 </script>

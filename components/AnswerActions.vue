@@ -7,12 +7,12 @@
     <div class="my-2 flex gap-3">
       <button
         class="w-28 py-1 bg-rose-700 text-white rounded hover:bg-rose-800 hover:font-semibold hover:scale-110 duration-500"
-        @click="$emit('increase')"
+        @click="$emit('increase', 'no')"
         v-text="$t('general.no')" />
 
       <button
         class="w-28 py-1 bg-emerald-700 text-white rounded hover:bg-emerald-800 hover:font-semibold hover:scale-110 duration-500"
-        @click="$emit('increase-with-yes')"
+        @click="$emit('increase', 'yes')"
         v-text="$t('general.yes')" />
     </div>
   </div>
@@ -24,7 +24,7 @@ import { useI18n } from 'vue-i18n'
 const props = defineProps({
   currentRound: Number,
 })
-const emit = defineEmits(['increase', 'increase-with-yes'])
+const emit = defineEmits(['increase'])
 
 const { t } = useI18n()
 const confirmationMessage = computed(() => {

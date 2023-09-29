@@ -12,7 +12,7 @@
 
       <button
         class="w-28 py-1 bg-cyan-700 hover:bg-cyan-800 text-white rounded hover:font-semibold hover:scale-110 duration-500"
-        @click="$emit('increase')"
+        @click="$emit('increase', 'next')"
         v-text="$t('general.next')" />
     </div>
   </div>
