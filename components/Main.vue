@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <HomePage
-      :is-before-game-started="isBeforeGameStarted"
-      @start="startGame" />
+  <div class="flex flex-col justify-center items-center">
+    <HomePage v-if="isBeforeGameStarted" @start="startGame" />
 
     <div v-if="isGameStarted" class="flex flex-col justify-center items-center">
       <FruitsList :fruits="fruits" />

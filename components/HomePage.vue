@@ -1,7 +1,5 @@
 <template>
-  <div
-    v-if="isBeforeGameStarted"
-    class="mt-8 h-96 break-words flex flex-col justify-center items-center">
+  <div class="mt-8 h-96 break-words flex flex-col justify-center items-center">
     <img
       src="/images/fruits/1.png"
       alt="Jackfruit"
@@ -30,9 +28,6 @@
 import { useI18n } from 'vue-i18n'
 import PlayIcon from '@/assets/icons/play.svg'
 
-const props = defineProps({
-  isBeforeGameStarted: Boolean,
-})
 const emit = defineEmits(['start'])
 
 const { t } = useI18n()
