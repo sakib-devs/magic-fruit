@@ -3,23 +3,9 @@
     <HomePage
       :is-before-game-started="isBeforeGameStarted"
       @start="startGame" />
+
     <div v-if="isGameStarted" class="flex flex-col justify-center items-center">
-      <div class="my-4 flex justify-center items-start gap-16 h-96">
-        <ul
-          class="flex flex-col gap-2"
-          v-for="(fruits, index) in chunkedFruits"
-          :key="`chuncked-fruit-${index}`">
-          <li
-            class="flex items-center gap-4"
-            v-for="{ id, name } in fruits"
-            :key="id">
-            <img :src="`/images/fruits/${id}.webp`" :alt="name" class="w-10" />
-            <span
-              class="text-lg font-semibold hover:text-cyan-600 duration-500 cursor-pointer"
-              v-text="name" />
-          </li>
-        </ul>
-      </div>
+      <FruitsList :fruits="listedFruits" />
 
       <div
         v-if="isStarterRound"
@@ -93,8 +79,9 @@
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { fruitsMap, answer } from '@/utils/fruits'
-import { sliceIntoChunks } from '@/helpers/chunks'
 import PlayIcon from '@/assets/icons/play.svg'
+import HomePage from '@/components/HomePage.vue'
+import FruitsList from '@/components/FruitsList.vue'
 
 const i18n = useI18n()
 const confirmationMessage = computed(() => {
@@ -132,13 +119,6 @@ const listedFruits = computed(() => {
     ...fruit,
     name: i18n.t(fruit.name),
   }))
-})
-const chunkedFruits = computed(() => {
-  if (listedFruits.value.length === 0) {
-    return []
-  }
-
-  return sliceIntoChunks(listedFruits.value, 10)
 })
 
 const points = ref(0)
