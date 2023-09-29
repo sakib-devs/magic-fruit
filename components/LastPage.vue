@@ -10,7 +10,7 @@
         v-if="hasAnswer"
         :src="`/images/fruits/${answer.get(points).id}.png`"
         :alt="pickedFruit"
-        class="mt-4 w-36 rounded-full" />
+        class="mt-4 h-36 rounded-full" />
 
       <span
         class="text-center text-emerald-500 text-[4rem] font-bold"

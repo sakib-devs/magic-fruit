@@ -3,7 +3,7 @@
     <img
       src="/images/fruits/1.png"
       alt="Jackfruit"
-      class="w-48 hover:w-60 mt-4 sm:mt-0 rounded-full duration-500" />
+      class="h-48 hover:h-60 mt-4 sm:mt-0 duration-500" />
 
     <span
       class="text-center text-[3rem] w-fit font-bold md:hover:scale-125 duration-500 hover:text-emerald-500"
