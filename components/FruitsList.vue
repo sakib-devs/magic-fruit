@@ -9,6 +9,7 @@
         v-for="{ id, name } in fruits"
         :key="id">
         <img :src="`/images/fruits/${id}.webp`" :alt="name" class="w-10" />
+
         <span
           class="text-lg font-semibold hover:text-cyan-600 duration-500 cursor-pointer"
           v-text="name" />

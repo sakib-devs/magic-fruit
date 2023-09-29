@@ -5,20 +5,24 @@
         v-if="hasAnswer"
         class="text-center text-3xl font-bold"
         v-text="$t('general.your-answer')" />
+
       <img
         v-if="hasAnswer"
         :src="`/images/fruits/${answer.get(points).id}.png`"
         :alt="pickedFruit"
         class="mt-4 w-36 rounded-full" />
+
       <span
         class="text-center text-emerald-500 text-[4rem] font-bold"
         v-text="pickedFruit" />
       <span class="mt-2" v-if="hasAnswer" v-text="wrongAnswer" />
     </div>
+
     <div class="mt-2 flex flex-col justify-center items-center">
       <PlayIcon
         class="play-icon hover:scale-125 duration-500 text-cyan-500 px-2 rounded-full cursor-pointer"
         @click="$emit('start')" />
+
       <button
         class="font-semibold"
         v-text="$t('general.play-again')"
