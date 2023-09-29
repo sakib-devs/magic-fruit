@@ -9,18 +9,15 @@
       class="text-center text-[3rem] w-fit font-bold md:hover:scale-125 duration-500 hover:text-emerald-500"
       v-text="textGreetings" />
 
-    <div
-      class="flex flex-col justify-center items-center hover:scale-125 duration-500">
+    <button
+      class="flex flex-col justify-center items-center hover:scale-125 duration-500"
+      @click="$emit('start')">
       <PlayIcon
         class="play-icon text-cyan-500 px-2 rounded-full cursor-pointer"
-        :title="$t('general.play')"
-        @click="$emit('start')" />
+        :title="$t('general.play')" />
 
-      <button
-        class="font-semibold"
-        v-text="$t('general.play')"
-        @click="$emit('start')" />
-    </div>
+      <span class="font-semibold" v-text="$t('general.play')" />
+    </button>
   </div>
 </template>
 

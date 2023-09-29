@@ -18,16 +18,15 @@
       <span class="mt-2" v-if="hasAnswer" v-text="wrongAnswer" />
     </div>
 
-    <div class="mt-2 flex flex-col justify-center items-center">
+    <button
+      class="flex flex-col justify-center items-center hover:scale-125 duration-500"
+      @click="$emit('start')">
       <PlayIcon
-        class="play-icon hover:scale-125 duration-500 text-cyan-500 px-2 rounded-full cursor-pointer"
-        @click="$emit('start')" />
+        class="play-icon text-cyan-500 px-2 rounded-full cursor-pointer"
+        :title="$t('general.play')" />
 
-      <button
-        class="font-semibold"
-        v-text="$t('general.play-again')"
-        @click="$emit('start')" />
-    </div>
+      <span class="font-semibold" v-text="$t('general.play-again')" />
+    </button>
   </div>
 </template>
 
