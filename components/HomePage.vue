@@ -42,10 +42,3 @@ const textGreetings = computed(() => {
   })
 })
 </script>
-
-<style scoped>
-.play-icon {
-  height: 5rem;
-  width: 5rem;
-}
-</style>

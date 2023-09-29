@@ -11,7 +11,7 @@
         :alt="pickedFruit"
         class="mt-4 w-36 rounded-full" />
       <span
-        class="break-words text-emerald-500 text-[4rem] font-bold"
+        class="text-center text-emerald-500 text-[4rem] font-bold"
         v-text="pickedFruit" />
       <span class="mt-2" v-if="hasAnswer" v-text="wrongAnswer" />
     </div>
@@ -52,10 +52,3 @@ const wrongAnswer = computed(() => {
   return `(${t('general.or')} ${t('general.wrong-answer')})`
 })
 </script>
-
-<style scoped>
-.play-icon {
-  height: 5rem;
-  width: 5rem;
-}
-</style>
