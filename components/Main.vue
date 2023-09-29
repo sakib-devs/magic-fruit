@@ -84,9 +84,6 @@ function increaseRound(action) {
     playSound('success', 'mp3')
   }
 }
-function increaseRoundWithYes() {
-  increaseRound()
-}
 function decreaseRound() {
   currentRound.value--
 }
