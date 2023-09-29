@@ -5,7 +5,7 @@
       @start="startGame" />
 
     <div v-if="isGameStarted" class="flex flex-col justify-center items-center">
-      <FruitsList :fruits="listedFruits" />
+      <FruitsList :fruits="fruits" />
 
       <IncreamentActions
         v-if="isStarterRound"
@@ -19,46 +19,19 @@
         @increase-with-yes="increaseRoundWithYes" />
     </div>
 
-    <div
-      v-if="isGameFinished"
-      class="mt-16 h-96 flex flex-col justify-center items-center">
-      <div class="flex flex-col justify-center items-center">
-        <span
-          v-if="hasAnswer"
-          class="text-center text-3xl font-bold"
-          v-text="$t('general.your-answer')" />
-        <img
-          v-if="hasAnswer"
-          :src="`/images/fruits/${answer.get(points).id}.png`"
-          :alt="pickedFruit"
-          class="mt-4 w-36 rounded-full" />
-        <span
-          class="break-words text-emerald-500 text-[4rem] font-bold"
-          v-text="pickedFruit" />
-        <span class="mt-2" v-if="hasAnswer" v-text="wrongAnswer" />
-      </div>
-      <div class="mt-2 flex flex-col justify-center items-center">
-        <PlayIcon
-          class="play-icon hover:scale-125 duration-500 text-cyan-500 px-2 rounded-full cursor-pointer"
-          @click="startGame" />
-        <button
-          class="font-semibold"
-          v-text="$t('general.play-again')"
-          @click="startGame" />
-      </div>
-    </div>
+    <LastPage v-if="isGameFinished" :points="points" @start="startGame" />
   </div>
 </template>
 
 <script setup>
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { fruitsMap, answer } from '@/utils/fruits'
-import PlayIcon from '@/assets/icons/play.svg'
+import { fruitsMap } from '@/utils/fruits'
 import HomePage from '@/components/HomePage'
 import FruitsList from '@/components/FruitsList'
 import IncreamentActions from '@/components/IncreamentActions'
 import AnswerActions from '@/components/AnswerActions'
+import LastPage from '@/components/LastPage'
 
 const i18n = useI18n()
 
@@ -78,7 +51,7 @@ const isGameStarted = computed(() => {
 const isGameFinished = computed(() => {
   return isRound(fruitsMap.size)
 })
-const listedFruits = computed(() => {
+const fruits = computed(() => {
   if (!fruitsMap.has(currentRound.value)) {
     return []
   }
@@ -90,19 +63,6 @@ const listedFruits = computed(() => {
 })
 
 const points = ref(0)
-const hasAnswer = computed(() => {
-  return answer.has(points.value)
-})
-const pickedFruit = computed(() => {
-  if (!hasAnswer.value) {
-    return i18n.t('general.wrong-answer')
-  }
-
-  return i18n.t(answer.get(points.value).name)
-})
-const wrongAnswer = computed(() => {
-  return `(${i18n.t('general.or')} ${i18n.t('general.wrong-answer')})`
-})
 
 function startGame() {
   currentRound.value = 0
