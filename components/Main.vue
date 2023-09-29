@@ -1,21 +1,8 @@
 <template>
   <div>
-    <div
-      v-if="isBeforeGameStarted"
-      class="h-96 break-words flex flex-col justify-center items-center">
-      <span
-        class="text-center text-[3rem] w-fit font-bold md:hover:scale-125 duration-500 hover:text-emerald-500"
-        v-text="textGreetings" />
-      <PlayIcon
-        class="play-icon hover:scale-125 duration-500 text-cyan-500 px-2 rounded-full cursor-pointer"
-        :title="$t('general.play')"
-        @click="startGame" />
-      <button
-        class="font-semibold"
-        v-text="$t('general.play')"
-        @click="startGame" />
-    </div>
-
+    <HomePage
+      :is-before-game-started="isBeforeGameStarted"
+      @start="startGame" />
     <div v-if="isGameStarted" class="flex flex-col justify-center items-center">
       <div class="my-4 flex justify-center items-start gap-16 h-96">
         <ul
@@ -102,19 +89,14 @@
   </div>
 </template>
 
-import { computed, ref } from 'vue'
 <script setup>
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { fruitsMap, answer } from '@/utils/fruits'
 import { sliceIntoChunks } from '@/helpers/chunks'
 import PlayIcon from '@/assets/icons/play.svg'
 
 const i18n = useI18n()
-const textGreetings = computed(() => {
-  return i18n.t('general.greetings', {
-    title: i18n.t('project.title'),
-  })
-})
 const confirmationMessage = computed(() => {
   switch (currentRound.value) {
     case 1:
@@ -146,9 +128,10 @@ const listedFruits = computed(() => {
     return []
   }
 
-  return fruitsMap
-    .get(currentRound.value)
-    .map(fruit => ({ ...fruit, name: i18n.t(fruit.name) }))
+  return fruitsMap.get(currentRound.value).map(fruit => ({
+    ...fruit,
+    name: i18n.t(fruit.name),
+  }))
 })
 const chunkedFruits = computed(() => {
   if (listedFruits.value.length === 0) {
