@@ -12,6 +12,7 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/i18n": "^8.0.0-rc.4",
+    "@vue/test-utils": "^2.4.1",
     "autoprefixer": "^10.4.15",
     "nuxt": "^3.7.3",
     "nuxt-svgo": "^3.5.3",
