@@ -70,11 +70,11 @@ function isRound(round) {
   return currentRound.value === round
 }
 function increaseRound(action) {
-  currentRound.value++
-
   if (action === 'yes') {
     points.value += currentRound.value
   }
+
+  currentRound.value++
 
   if (isPlayingRound.value) {
     playSound('start')
