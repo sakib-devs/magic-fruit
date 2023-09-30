@@ -48,4 +48,20 @@ describe('AnswerActions', () => {
       }
     )
   })
+
+  describe('events', () => {
+    it.each([
+      ['no-button', 'no'],
+      ['yes-button', 'yes'],
+    ])('should emit event "%s"', async (id, param) => {
+      const wrapper = wrapperFactory()
+      const element = wrapper.find(`[data-testid="${id}"]`)
+
+      await element.trigger('click')
+
+      const emitted = wrapper.emitted('increase', param)
+
+      expect(emitted).toBeTruthy()
+    })
+  })
 })
