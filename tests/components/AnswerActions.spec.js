@@ -25,6 +25,23 @@ describe('AnswerActions', () => {
     expect(wrapper.vm).toBeTruthy()
   })
 
+  describe('confirmation message', () => {
+    it.each([
+      [1, 'fruit.confirmation'],
+      [2, 'fruit.available'],
+      [3, 'fruit.here'], // or any other round
+    ])(
+      'should have correct confirmation message if "currentRound" is %s',
+      async (currentRound, translation) => {
+        const wrapper = wrapperFactory()
+        await wrapper.setProps({ currentRound })
+        const element = wrapper.find('[data-testid="confirmation-message"]')
+
+        expect(element.text()).toBe(i18nMock.en[translation])
+      }
+    )
+  })
+
   describe('translations', () => {
     it.each([
       ['no-button-text', 'general.no'],
@@ -53,7 +70,7 @@ describe('AnswerActions', () => {
     it.each([
       ['no-button', 'no'],
       ['yes-button', 'yes'],
-    ])('should emit event "%s"', async (id, param) => {
+    ])('should emit event "increase" for "%s"', async (id, param) => {
       const wrapper = wrapperFactory()
       const element = wrapper.find(`[data-testid="${id}"]`)
 
