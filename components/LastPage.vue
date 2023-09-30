@@ -4,33 +4,47 @@
       <span
         v-if="hasAnswer"
         class="text-center text-3xl font-bold"
+        data-testid="answer-label"
         v-text="$t('general.your-answer')" />
 
       <img
         v-if="hasAnswer"
+        class="mt-4 h-36 rounded-full"
+        data-testid="answer-image"
         :src="`/images/fruits/${answer.get(points).id}.png`"
-        :alt="pickedFruit"
-        class="mt-4 h-36 rounded-full" />
+        :alt="pickedFruit" />
 
       <span
         class="text-center text-emerald-500 text-[4rem] font-bold"
+        data-testid="answer-text"
         v-text="pickedFruit" />
-      <span class="mt-2" v-if="hasAnswer" v-text="wrongAnswer" />
+
+      <span
+        data-testid="wrong-answer"
+        class="mt-2"
+        v-if="hasAnswer"
+        v-text="wrongAnswer" />
     </div>
 
     <button
+      data-testid="play-button"
       class="flex flex-col justify-center items-center hover:scale-125 duration-500"
       @click="$emit('start')">
       <PlayIcon
+        data-testid="play-icon"
         class="play-icon text-cyan-500 px-2 rounded-full cursor-pointer"
         :title="$t('general.play')" />
 
-      <span class="font-semibold" v-text="$t('general.play-again')" />
+      <span
+        data-testid="play-again-text"
+        class="font-semibold"
+        v-text="$t('general.play-again')" />
     </button>
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { answer } from '@/utils/fruits'
 import PlayIcon from '@/assets/icons/play.svg'
