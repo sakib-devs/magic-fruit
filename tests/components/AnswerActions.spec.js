@@ -36,4 +36,16 @@ describe('AnswerActions', () => {
       expect(element.text()).toBe(i18nMock.en[translation])
     })
   })
+
+  describe('icons', () => {
+    it.each([['no-button-icon'], ['yes-button-icon']])(
+      'should have icon "%s"',
+      id => {
+        const wrapper = wrapperFactory()
+        const element = wrapper.find(`[data-testid="${id}"]`)
+
+        expect(element.exists()).toBeTruthy()
+      }
+    )
+  })
 })
