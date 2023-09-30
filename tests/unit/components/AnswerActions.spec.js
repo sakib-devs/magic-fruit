@@ -18,7 +18,7 @@ function wrapperFactory() {
   })
 }
 
-describe('AnswerActions', () => {
+describe('@/components/AnswerActions.vue', () => {
   it('is a Vue instance', () => {
     const wrapper = wrapperFactory()
 
