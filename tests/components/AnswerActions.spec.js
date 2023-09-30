@@ -10,13 +10,30 @@ const i18n = createI18n({
   messages: i18nMock,
 })
 
+function wrapperFactory() {
+  return mount(AnswerActions, {
+    global: {
+      plugins: [i18n],
+    },
+  })
+}
+
 describe('AnswerActions', () => {
   it('is a Vue instance', () => {
-    const wrapper = mount(AnswerActions, {
-      global: {
-        plugins: [i18n],
-      },
-    })
+    const wrapper = wrapperFactory()
+
     expect(wrapper.vm).toBeTruthy()
+  })
+
+  describe('translations', () => {
+    it.each([
+      ['no-button-text', 'general.no'],
+      ['yes-button-text', 'general.yes'],
+    ])('should translate text for "%s"', (id, translation) => {
+      const wrapper = wrapperFactory()
+      const element = wrapper.find(`[data-testid="${id}"]`)
+
+      expect(element.text()).toBe(i18nMock.en[translation])
+    })
   })
 })
