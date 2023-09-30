@@ -1,20 +1,20 @@
-const mango = { id: 1, name: 'fruit.mango', image: '1.png' }
-const berry = { id: 2, name: 'fruit.berry', image: '2.png' }
-const jackfruit = { id: 3, name: 'fruit.jackfruit', image: '3.png' }
-const banana = { id: 4, name: 'fruit.banana', image: '4.png' }
-const grapefruit = { id: 5, name: 'fruit.grapefruit', image: '5.png' }
-const amalaki = { id: 6, name: 'fruit.amalaki', image: '6.png' }
-const palm = { id: 7, name: 'fruit.palm', image: '7.png' }
-const pomegranate = { id: 8, name: 'fruit.pomegranate', image: '8.png' }
-const lychee = { id: 9, name: 'fruit.lychee', image: '9.png' }
-const carambola = { id: 10, name: 'fruit.carambola', image: '10.png' }
-const woodApple = { id: 11, name: 'fruit.woodApple', image: '11.png' }
-const jujube = { id: 12, name: 'fruit.jujube', image: '12.png' }
-const custardApple = { id: 13, name: 'fruit.custardApple', image: '13.png' }
-const velvetApple = { id: 14, name: 'fruit.velvetApple', image: '14.png' }
-const sapodilla = { id: 15, name: 'fruit.sapodilla', image: '15.png' }
-const papaya = { id: 16, name: 'fruit.papaya', image: '16.png' }
-const coconut = { id: 17, name: 'fruit.coconut', image: '17.png' }
+const mango = { id: 1, name: 'fruit.mango' }
+const berry = { id: 2, name: 'fruit.berry' }
+const jackfruit = { id: 3, name: 'fruit.jackfruit' }
+const banana = { id: 4, name: 'fruit.banana' }
+const grapefruit = { id: 5, name: 'fruit.grapefruit' }
+const amalaki = { id: 6, name: 'fruit.amalaki' }
+const palm = { id: 7, name: 'fruit.palm' }
+const pomegranate = { id: 8, name: 'fruit.pomegranate' }
+const lychee = { id: 9, name: 'fruit.lychee' }
+const carambola = { id: 10, name: 'fruit.carambola' }
+const woodApple = { id: 11, name: 'fruit.woodApple' }
+const jujube = { id: 12, name: 'fruit.jujube' }
+const custardApple = { id: 13, name: 'fruit.custardApple' }
+const velvetApple = { id: 14, name: 'fruit.velvetApple' }
+const sapodilla = { id: 15, name: 'fruit.sapodilla' }
+const papaya = { id: 16, name: 'fruit.papaya' }
+const coconut = { id: 17, name: 'fruit.coconut' }
 
 export const firstPageFruits = [
   grapefruit,
