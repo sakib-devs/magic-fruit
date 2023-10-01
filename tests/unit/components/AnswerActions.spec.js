@@ -70,13 +70,13 @@ describe('@/components/AnswerActions.vue', () => {
     it.each([
       ['no-button', 'no'],
       ['yes-button', 'yes'],
-    ])('should emit event "increase" for "%s"', async (id, param) => {
+    ])('should emit event "increase" for "%s"', async (id, payload) => {
       const wrapper = wrapperFactory()
       const element = wrapper.find(`[data-testid="${id}"]`)
 
       await element.trigger('click')
 
-      const emitted = wrapper.emitted('increase', param)
+      const emitted = wrapper.emitted('increase', payload)
 
       expect(emitted).toBeTruthy()
     })
