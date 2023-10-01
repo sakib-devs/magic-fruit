@@ -22,7 +22,7 @@
       <button
         data-testid="next-button"
         class="flex gap-2 justify-center items-center w-32 py-1.5 bg-cyan-700 text-white rounded hover:bg-cyan-800 hover:font-semibold hover:scale-110 duration-500"
-        @click="$emit('increase', 'next')">
+        @click="$emit('increase')">
         <span data-testid="next-button-text" v-text="$t('general.next')" />
 
         <ArrowRightIcon
