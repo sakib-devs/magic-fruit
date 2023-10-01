@@ -6,7 +6,7 @@
       class="h-48 hover:h-60 mt-4 sm:mt-0 duration-500" />
 
     <span
-      class="text-center text-[3rem] w-fit font-bold md:hover:scale-125 duration-500 hover:text-emerald-500"
+      class="text-center text-[3rem] bg-clip-text text-transparent bg-gradient-to-r hover:bg-gradient-to-l from-violet-500 via-cyan-600 to-emerald-500 w-fit font-bold md:hover:scale-125 duration-500"
       v-text="textGreetings" />
 
     <button
