@@ -1,6 +1,6 @@
 <template>
-  <header class="header">
-    <div class="header__left flex w-full">
+  <header>
+    <div class="flex w-full">
       <select
         @change="setLocale"
         class="p-1.5 bg-gray-200 rounded-sm outline-none text-center w-full sm:text-left sm:w-fit">
@@ -30,17 +30,3 @@ const setLocale = event => {
 }
 const isSelected = code => i18n.locale.value === code
 </script>
-
-<style scoped>
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header__left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-</style>
