@@ -3,7 +3,7 @@
     <div class="flex w-full">
       <select
         @change="setLocale"
-        class="p-1.5 bg-gray-200 rounded-sm outline-none text-center w-full sm:text-left sm:w-fit">
+        class="p-1.5 bg-gray-200 rounded-sm outline-none text-center w-full sm:text-left sm:w-48">
         <option value="" v-text="$t('general.select-language')" />
         <option
           v-for="{ code, name } in locales"
