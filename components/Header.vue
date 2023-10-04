@@ -25,8 +25,10 @@ const i18n = useI18n()
 const localeStore = useLocaleStore()
 const locales = computed(() => localeStore.locales)
 
-const setLocale = event => {
+function setLocale(event) {
   i18n.setLocale(event.target.value)
 }
-const isSelected = code => i18n.locale.value === code
+function isSelected(code) {
+  return i18n.locale.value === code
+}
 </script>
