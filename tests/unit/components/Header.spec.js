@@ -1,9 +1,8 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 import { createTestingPinia } from '@pinia/testing'
-import { useLocaleStore } from '@/store/locale'
 import { createI18n } from 'vue-i18n'
-import i18nMock from '@/tests/mocks/i18n.js'
+import i18nMock from '@/tests/mocks/i18n'
 import Header from '@/components/Header.vue'
 
 const i18n = createI18n({
