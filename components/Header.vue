@@ -2,6 +2,7 @@
   <header>
     <div class="flex w-full">
       <select
+        data-testid="language-dropdown"
         class="p-1.5 bg-gray-200 rounded-sm outline-none text-center w-full sm:text-left sm:w-48"
         @change="setLocale">
         <option value="" v-text="$t('general.select-language')" />
