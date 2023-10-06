@@ -2,8 +2,8 @@
   <header>
     <div class="flex w-full">
       <select
-        @change="setLocale"
-        class="p-1.5 bg-gray-200 rounded-sm outline-none text-center w-full sm:text-left sm:w-48">
+        class="p-1.5 bg-gray-200 rounded-sm outline-none text-center w-full sm:text-left sm:w-48"
+        @change="setLocale">
         <option value="" v-text="$t('general.select-language')" />
         <option
           v-for="{ code, name } in locales"
